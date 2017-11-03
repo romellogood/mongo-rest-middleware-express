@@ -1,12 +1,21 @@
 {
   "name": "mongo-rest-middleware-express",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Romello Goodman <romellogood@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romellogood/mongo-rest-middleware-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/romellogood/mongo-rest-middleware-express/issues"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
