@@ -2,7 +2,7 @@
   "name": "mongo-rest-middleware-express",
   "version": "0.0.2",
   "description": "A middleware for manipulating mongodb",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "del lib && rollup -c",
     "jest": "jest",
