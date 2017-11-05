@@ -178,8 +178,11 @@ function put (req, res) {
       (err, {value}) => {
         if (err) {
           console.log(
-            'An error occured while querying with the criteria',
-            JSON.stringify(query)
+            'An error occured while replacing a document',
+            'search criteria',
+            JSON.stringify(query),
+            'new document',
+            JSON.stringify(body)
           );
           console.log(err);
           throw new Error(err);
@@ -204,24 +207,6 @@ const methodTree = {
 };
 
 /**
- * Ru
- * @param {Object} req express request object
- * @param {Object} res express response object
- * @param {Function} next express next function
- * @return {Void} returns nothing
- */
-function middleware (req, res, next) {
-  const method = methodTree[req.method];
-
-  if (method) {
-    method(req, res);
-    return;
-  }
-
-  next();
-}
-
-/**
  * Connect to mongo and return the middleware
  * @param {Object} options middleware options
  * @return {Func} returns middleware function
@@ -239,5 +224,14 @@ export default function (options) {
     mongoDB = db;
   });
 
-  return middleware;
+  return function (req, res, next) {
+    const method = methodTree[req.method];
+
+    if (method) {
+      method(req, res);
+      return;
+    }
+
+    next();
+  };
 }
