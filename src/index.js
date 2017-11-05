@@ -221,6 +221,7 @@ export default function (options) {
       throw new Error(err);
     }
 
+    console.log('Connected to mongo at', url);
     mongoDB = db;
   });
 
