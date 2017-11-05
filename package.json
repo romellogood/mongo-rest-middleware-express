@@ -1,6 +1,6 @@
 {
   "name": "mongo-rest-middleware-express",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A middleware for manipulating mongodb",
   "main": "lib/index.js",
   "scripts": {
