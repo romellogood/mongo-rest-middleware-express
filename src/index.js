@@ -101,7 +101,7 @@ function patch (req, res) {
   mongoDB
     .collection(collection)
     .findOneAndUpdate(
-      {query},
+      query,
       {$set: body},
       {returnNewDocument: true},
       (err, {value}) => {
