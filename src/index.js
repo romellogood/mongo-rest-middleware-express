@@ -33,7 +33,7 @@ function extractInputs (req) {
 function deleteMethod (req, res) {
   const {collection, method, query, url} = extractInputs(req);
 
-  console.log('DELETE:', url);
+  // console.log('DELETE:', url);
 
   mongoDB.collection(collection).findOneAndDelete(query, (err, {value}) => {
     if (err) {
@@ -63,7 +63,7 @@ function deleteMethod (req, res) {
 function get (req, res) {
   const {collection, method, query, url} = extractInputs(req);
 
-  console.log('GET:', url);
+  // console.log('GET:', url);
 
   mongoDB
     .collection(collection)
@@ -96,7 +96,7 @@ function get (req, res) {
 function patch (req, res) {
   const {body, collection, method, query, url} = extractInputs(req);
 
-  console.log('PATCH:', url);
+  // console.log('PATCH:', url);
 
   mongoDB
     .collection(collection)
@@ -136,7 +136,7 @@ function patch (req, res) {
 function post (req, res) {
   const {body, collection, method, url} = extractInputs(req);
 
-  console.log('POST:', url);
+  // console.log('POST:', url);
 
   mongoDB.collection(collection).insert(body, (err, {ops: [document]}) => {
     if (err) {
@@ -167,7 +167,7 @@ function post (req, res) {
 function put (req, res) {
   const {body, collection, method, query, url} = extractInputs(req);
 
-  console.log('PUT:', url);
+  // console.log('PUT:', url);
 
   mongoDB
     .collection(collection)
